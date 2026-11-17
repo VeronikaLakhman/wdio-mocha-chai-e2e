@@ -1,8 +1,8 @@
 import { browser } from '@wdio/globals'
 
-export default class Page {
-   
-    open (path) {
+export default class BasePage {
+
+    open(path) {
         return browser.url(`https://practicesoftwaretesting.com/${path}`)
     }
 }
