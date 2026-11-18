@@ -4,7 +4,7 @@ import ProductPage from '../po/pages/product.page.js';
 import { catalogData } from '../data-provider/catalog.data.js';
 
 describe('Product Details', () => {
-    it('should display product details for Bolt Cutters', async () => {
+    it('should display product details for the selected product', async () => {
         const productName = catalogData.products.boltCutters;
 
         await HomePage.open();
