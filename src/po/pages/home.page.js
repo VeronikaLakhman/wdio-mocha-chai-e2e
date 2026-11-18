@@ -20,8 +20,16 @@ class HomePage extends BasePage {
     }
 
     get productNames() {
-    return $$('[data-test="product-name"]');
-}
+        return $$('[data-test="product-name"]');
+    }
+
+    getCategoryCheckbox(category) {
+        return $(`//label[normalize-space(.)="${category}"]/input[@name="category_id"]`);
+    }
+
+    async filterByCategory(category) {
+        await this.getCategoryCheckbox(category).click();
+    }
 
     async searchProduct(name) {
         await this.searchInput.setValue(name);
