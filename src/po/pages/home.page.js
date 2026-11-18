@@ -23,6 +23,14 @@ class HomePage extends BasePage {
         return $$('[data-test="product-name"]');
     }
 
+    get sort() {
+        return $('[data-test="sort"]');
+    }
+
+    get productPrices() {
+        return $$('[data-test="product-price"]');
+    }
+
     getCategoryCheckbox(category) {
         return $(`//label[normalize-space(.)="${category}"]/input[@name="category_id"]`);
     }
@@ -34,6 +42,18 @@ class HomePage extends BasePage {
     async searchProduct(name) {
         await this.searchInput.setValue(name);
         await this.searchButton.click();
+    }
+
+    async getPrices() {
+        const products = await this.productPrices;
+        const prices = [];
+
+        for (const product of products) {
+            const priceText = await product.getText();
+            prices.push(Number(priceText.replace('$', '')));
+        }
+
+        return prices;
     }
 }
 

@@ -12,6 +12,10 @@ export const catalogData = {
         },
     },
 
+    sorting: {
+        priceLowToHigh: 'price,asc',
+    },
+
     searchQueries: {
         pliers: 'Pliers',
     },
