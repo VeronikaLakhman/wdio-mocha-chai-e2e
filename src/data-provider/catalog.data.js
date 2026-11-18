@@ -11,4 +11,8 @@ export const catalogData = {
             hammer: 'Hammer',
         },
     },
+
+    searchQueries: {
+        pliers: 'Pliers',
+    },
 };
