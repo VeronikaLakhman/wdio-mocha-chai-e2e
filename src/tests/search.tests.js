@@ -1,4 +1,3 @@
-
 import { browser } from '@wdio/globals';
 import { should } from 'chai';
 import HomePage from '../po/pages/home.page.js';

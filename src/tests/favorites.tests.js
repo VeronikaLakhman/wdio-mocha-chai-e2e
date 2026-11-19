@@ -1,4 +1,3 @@
-
 import { browser } from '@wdio/globals';
 import { expect as chaiExpect } from 'chai';
 import LoginPage from '../po/pages/login.page.js';
