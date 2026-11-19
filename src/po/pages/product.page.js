@@ -13,6 +13,14 @@ class ProductPage extends BasePage {
     get productImage() {
         return $('app-detail img.figure-img');
     }
+
+    get addToFavoritesButton() {
+        return $('[data-test="add-to-favorites"]');
+    }
+
+    async addToFavorites() {
+        await this.addToFavoritesButton.click();
+    }
 }
 
 export default new ProductPage();
