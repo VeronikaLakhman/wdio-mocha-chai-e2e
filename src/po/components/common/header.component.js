@@ -13,6 +13,22 @@ class HeaderComponent {
         return $('[data-test="nav-cart"]');
     }
 
+    get languageSelector() {
+        return $('[data-test="language-select"]');
+    }
+
+    get germanLanguageOption() {
+        return $('[data-test="lang-de"]');
+    }
+
+    get homeLink() {
+        return $('[data-test="nav-home"]');
+    }
+
+    get contactLink() {
+        return $('[data-test="nav-contact"]');
+    }
+
     async getUserName() {
         return this.userMenu.getText();
     }
@@ -23,6 +39,15 @@ class HeaderComponent {
 
     async openCart() {
         await this.cartLink.click();
+    }
+
+    async selectGermanLanguage() {
+        await this.languageSelector.click();
+        await this.germanLanguageOption.click();
+    }
+
+    async openContactPage() {
+        await this.contactLink.click();
     }
 }
 
