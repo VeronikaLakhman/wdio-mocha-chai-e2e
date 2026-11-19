@@ -18,8 +18,16 @@ class ProductPage extends BasePage {
         return $('[data-test="add-to-favorites"]');
     }
 
+    get addToCartButton() {
+        return $('[data-test="add-to-cart"]');
+    }
+
     async addToFavorites() {
         await this.addToFavoritesButton.click();
+    }
+
+    async addToCart() {
+        await this.addToCartButton.click();
     }
 }
 
