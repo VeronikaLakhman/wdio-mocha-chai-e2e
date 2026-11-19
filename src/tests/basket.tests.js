@@ -38,7 +38,7 @@ describe('Basket', () => {
 
         await browser.waitUntil(
             async () => {
-                const totalText = await BasketPage.getTotalPrice(productName).getText();
+                const totalText = await BasketPage.getLineTotal(productName).getText();
                 return Number(totalText.replace('$', '')) === expectedTotal;
             },
             {
@@ -51,7 +51,7 @@ describe('Basket', () => {
             await BasketPage.getQuantityInput(productName).getValue()
         );
 
-        const totalText = await BasketPage.getTotalPrice(productName).getText();
+        const totalText = await BasketPage.getLineTotal(productName).getText();
         const actualTotal = Number(totalText.replace('$', ''));
 
         chaiExpect(actualQuantity).to.equal(2);

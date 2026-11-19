@@ -18,7 +18,7 @@ class BasketPage extends BasePage {
         return this.getProductRow(name).$('[data-test="product-price"]');
     }
 
-    getTotalPrice(name) {
+    getLineTotal(name) {
         return this.getProductRow(name).$('[data-test="line-price"]');
     }
 
